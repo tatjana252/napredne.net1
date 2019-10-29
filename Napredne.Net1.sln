@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseEFCore", "DatabaseEFCore\DatabaseEFCore.csproj", "{583C8762-725A-4160-B947-A92E51253B36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{AE50D9F3-DD4F-4176-AA7F-B2D9BD302934}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{152F15BE-5F7D-4499-AAB6-1575BAA8D070}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{583C8762-725A-4160-B947-A92E51253B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583C8762-725A-4160-B947-A92E51253B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583C8762-725A-4160-B947-A92E51253B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583C8762-725A-4160-B947-A92E51253B36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE50D9F3-DD4F-4176-AA7F-B2D9BD302934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE50D9F3-DD4F-4176-AA7F-B2D9BD302934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE50D9F3-DD4F-4176-AA7F-B2D9BD302934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE50D9F3-DD4F-4176-AA7F-B2D9BD302934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{152F15BE-5F7D-4499-AAB6-1575BAA8D070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{152F15BE-5F7D-4499-AAB6-1575BAA8D070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{152F15BE-5F7D-4499-AAB6-1575BAA8D070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{152F15BE-5F7D-4499-AAB6-1575BAA8D070}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {117446DC-39B2-4795-B3B6-259B4E639443}
+	EndGlobalSection
+EndGlobal
