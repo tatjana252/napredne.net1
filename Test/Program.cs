@@ -43,35 +43,52 @@ namespace Test
                 //    Department = new Department { Name = "Weitress" }
                 //};
                 
-                Employee newEmployee3 = new Employee
-                {
-                    Name = "Aleksa",
-                    LastName = "Pavlovic",
-                    Address = "Vojvode Stepe 320",
-                    Department = new Department { Name = "Engeneer" }
-                };
-                context.AddRange(newEmployee3);
+                //Employee newEmployee3 = new Employee
+                //{
+                //    Name = "Aleksa",
+                //    LastName = "Pavlovic",
+                //    Address = "Vojvode Stepe 320",
+                //    Department = new Department { Name = "Engeneer" }
+                //};
+                //context.AddRange(newEmployee3);
 
                 //context.SaveChanges();
                 #endregion
 
-                List<Employee> employees = context.Employees.Include(e => e.Department).ToList();
-                List<Employee> employeesd1 = context.Employees.Where(e => e.Department.Id == 1).ToList();
+                //List<Employee> employees = context.Employees.Include(e => e.Department).ToList();
+                //List<Employee> employeesd1 = context.Employees.Where(e => e.Department.Id == 1).ToList();
 
-                foreach(Employee e in employeesd1)
-                {
-                    Console.WriteLine($"Employee: {e.Id} {e.Name} {e.LastName} {e.Department.Name}");
-                }
+                //foreach(Employee e in employeesd1)
+                //{
+                //    Console.WriteLine($"Employee: {e.Id} {e.Name} {e.LastName} {e.Department.Name}");
+                //}
 
-                Employee pera = context.Employees.Find(1);
-                Console.WriteLine($"{pera.Id} {pera.Name} {pera.LastName}");
-                pera.LastName = "Mikic";
+                //Employee pera = context.Employees.Find(1);
+                //Console.WriteLine($"{pera.Id} {pera.Name} {pera.LastName}");
+                //pera.LastName = "Mikic";
 
-                Department d = context.Departments.Find(1);
-                Employee e1 = new Employee { Name = "Zika", LastName = "Mikic", Department = d };
-                Department d1 = context.Departments.Find(1);
-                Employee e2 = new Employee { Name = "Zika", LastName = "Mikic", Department = d };
-                context.Add(e1);
+                //Department d = context.Departments.Find(1);
+                //Employee e1 = new Employee { Name = "Zika", LastName = "Mikic", Department = new Department() { Name = "d1" } };
+
+
+
+
+
+
+                Department department = context.Departments.First();
+                Employee newEmployee = new Employee {
+                  
+                    Name = "Zika",
+                    LastName = "Mikic",
+                    Department = new Department()
+                    {
+                        Id = 1
+                    }
+                };
+                //context.Attach(e1);
+                //context.Entry(e1).State = EntityState.Modified;
+               
+                context.Add(newEmployee);
                 context.SaveChanges();
 
             }

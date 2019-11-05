@@ -4,14 +4,16 @@ using DatabaseEFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatabaseEFCore.Migrations
 {
     [DbContext(typeof(V1Context))]
-    partial class V1ContextModelSnapshot : ModelSnapshot
+    [Migration("20191105161347_Init2")]
+    partial class Init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace DatabaseEFCore.Migrations
 
                     b.Property<string>("Address");
 
-                    b.Property<int>("DepId");
+                    b.Property<int?>("DepartmentId");
 
                     b.Property<string>("LastName");
 
@@ -49,7 +51,7 @@ namespace DatabaseEFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepId");
+                    b.HasIndex("DepartmentId");
 
                     b.ToTable("Employees");
                 });
@@ -75,8 +77,7 @@ namespace DatabaseEFCore.Migrations
                 {
                     b.HasOne("Domain.Department", "Department")
                         .WithMany()
-                        .HasForeignKey("DepId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("DepartmentId");
                 });
 
             modelBuilder.Entity("Domain.Payment", b =>
