@@ -69,6 +69,8 @@ namespace Test
 
                 Department d = context.Departments.Find(1);
                 Employee e1 = new Employee { Name = "Zika", LastName = "Mikic", Department = d };
+                Department d1 = context.Departments.Find(1);
+                Employee e2 = new Employee { Name = "Zika", LastName = "Mikic", Department = d };
                 context.Add(e1);
                 context.SaveChanges();
 
