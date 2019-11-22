@@ -1,6 +1,7 @@
 ﻿using Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace LambdaIzrazi
 {
@@ -55,9 +56,12 @@ namespace LambdaIzrazi
                 }
             });
             #endregion
-            Pretraga((e) => {
-                var n = e.Name.ToUpper();
-                return e.Name == "PERA"; } );
+            //Pretraga((e) => {
+            //    var n = e.Name.ToUpper();
+            //    return e.Name == "PERA"; } );
+
+       
+
         }
         //private static void PronadjiPere()
         //{
@@ -77,11 +81,11 @@ namespace LambdaIzrazi
         //}
 
         //delegate bool Uslov(Employee e, object o);
-        private static void Pretraga(Func<Employee, bool> uslov)
+        private static void Pretraga(Expression<Func<Employee, bool>> uslov)
         {
             foreach (Employee e in employees)
             {
-                if (uslov(e))
+                if (uslov.Compile().Invoke(e)) 
                     Console.WriteLine($"{e.Id} {e.Name} {e.LastName} {e.Department.Name}");
             }
         }

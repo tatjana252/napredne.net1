@@ -15,7 +15,7 @@ namespace Test
             
             //context.Dispose();
 
-            using(V1Context context = new V1Context())
+            /*using(V1Context context = new V1Context())
             {
                 #region insert data
                 //Employee newEmployee = new Employee
@@ -93,6 +93,18 @@ namespace Test
 
             }
 
+    */
+            using(V1Context context = new V1Context())
+            {
+                IQueryable<Employee> queryAllEmployees = context.Employees.Include(e => e.Department);
+                IQueryable<Employee> queryFirstD1 = queryAllEmployees.Where(e => e.Department.Id == 1).Take(1);
+
+                IEnumerable<Employee> em = queryFirstD1.ToList();
+                foreach(Employee e in queryFirstD1)
+                {
+                    Console.WriteLine($"{e.Name} {e.LastName}");
+                }
+            }
         }
     }
 }
